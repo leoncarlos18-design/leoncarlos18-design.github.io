@@ -5,42 +5,37 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Leon OS</title>
 <style>
-:root{--bg:#07090d;--panel:#10141c;--line:#262c38;--text:#eef2f6;--dim:#8d95a6;--amber:#e4b15a}
+:root{--bg:#0c1014;--panel:#141a20;--line:#2a333c;--text:#e7ece8;--dim:#8b968f;--amber:#e0a15a}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.4 Segoe UI,system-ui,sans-serif}a{color:inherit;text-decoration:none}
-header{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--line)}header b{letter-spacing:.18em}header span{color:var(--dim)}
-.desk{display:grid;grid-template-columns:280px 1fr 300px;gap:12px;padding:12px}section{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px}
-h2{margin:0 0 10px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}.item{display:flex;justify-content:space-between;gap:8px;padding:9px 0;border-bottom:1px solid var(--line)}.item:hover{color:var(--amber)}.dim{color:var(--dim)}
-canvas{width:100%;height:360px;display:block;background:radial-gradient(circle at 50% 42%,#3a1216,#0b0d12 68%);border-radius:12px}.core{text-align:center;margin-top:-210px;position:relative}.core strong{letter-spacing:.22em;font-size:32px}.core em{display:block;margin-top:6px;color:var(--dim);font-style:normal}.card{margin-top:150px;text-align:left;background:#0b0e13cc;border:1px solid var(--line);border-radius:10px;padding:10px 12px}.card b{display:block;margin-bottom:4px}
-@media(max-width:900px){.desk{grid-template-columns:1fr}.core{margin-top:-180px}}
+header{display:flex;justify-content:space-between;align-items:baseline;padding:18px 22px 10px}header b{letter-spacing:.22em}header span{color:var(--dim)}
+.desk{display:grid;grid-template-columns:240px 1fr 280px;gap:14px;padding:8px 18px 18px}section{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px}
+h2{margin:0 0 12px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}.item{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line)}.item:hover{color:var(--amber)}.dim{color:var(--dim)}
+.rail{position:relative;height:220px;border-radius:12px;background:linear-gradient(#10161b,#182028);overflow:hidden}.sweep{position:absolute;top:0;bottom:0;width:2px;background:var(--amber);box-shadow:0 0 18px var(--amber);animation:sweep 18s linear infinite}.hours{position:absolute;inset:16px 16px auto 16px;display:flex;justify-content:space-between;color:var(--dim);font-size:11px}.now{position:absolute;left:16px;right:16px;bottom:16px}.now b{font-size:28px}.pulse{display:inline-block;width:8px;height:8px;margin-right:6px;border-radius:50%;background:var(--amber);animation:pulse 1.6s ease-out infinite}.props{display:flex;gap:8px;margin-top:12px}.props span{flex:1;text-align:center;padding:10px 0;border:1px solid var(--line);border-radius:10px;font-size:12px;letter-spacing:.08em}.props span.on{border-color:var(--amber);color:var(--amber)}
+@keyframes sweep{from{left:8%}to{left:92%}}@keyframes pulse{50%{transform:scale(1.6);opacity:.4}}
+@media(max-width:900px){.desk{grid-template-columns:1fr}}
 </style></head><body>
-<header><b>LEON OS</b><span id="clock">live desk</span></header>
+<header><b>LEON OS</b><span id="clock">Dania Beach</span></header>
 <div class="desk">
-<section><h2>Drive vault</h2>
+<section><h2>Vault</h2>
 <a class="item" href="https://drive.google.com/drive/folders/1Tbr0tgxChP4tIeeIt2N4ReX-BLcRhgrA" target="_blank"><span>Open vault</span><span>→</span></a>
-<a class="item" href="https://drive.google.com/drive/folders/1DK0hUtL6NxmnpxPhkToKHt3_2V-rNoYl" target="_blank"><span>00 Inbox</span><span>1</span></a>
-<a class="item" href="https://drive.google.com/drive/folders/1Z4mhV2DMyR2vPfnRb1e2UN10rPVHhdvg" target="_blank"><span>01 Properties</span><span>5</span></a>
-<a class="item" href="https://drive.google.com/drive/folders/1ATphuOWN30I0g2-8y4a5v5nngdMwjlJp" target="_blank"><span>02 Loss prevention</span><span>1</span></a>
-<a class="item" href="https://drive.google.com/drive/folders/1jOKA8fJvgd8EI_KXwPaf9_7G2iBRMqhm" target="_blank"><span>03 Engineering</span><span class="dim">0</span></a>
-<a class="item" href="https://drive.google.com/drive/folders/1l9EPsmK7_Ld3erOxvrmGg_1XhwjWpSlx" target="_blank"><span>04 Finance</span><span class="dim">0</span></a>
-<a class="item" href="https://drive.google.com/drive/folders/1Nma3XiCEZfqvPK7-OFWrAsZDiIHwdv9e" target="_blank"><span>05 House</span><span class="dim">0</span></a>
-<a class="item" href="https://drive.google.com/drive/folders/1Pt5wkNRhsoWxlhj8ohSvTvoKjJMnXG-E" target="_blank"><span>06 Skills</span><span>3</span></a>
+<a class="item" href="https://drive.google.com/drive/folders/1DK0hUtL6NxmnpxPhkToKHt3_2V-rNoYl" target="_blank"><span>Inbox</span><span>1</span></a>
+<a class="item" href="https://drive.google.com/drive/folders/1ATphuOWN30I0g2-8y4a5v5nngdMwjlJp" target="_blank"><span>Loss prevention</span><span>1</span></a>
+<a class="item" href="https://drive.google.com/drive/folders/1jOKA8fJvgd8EI_KXwPaf9_7G2iBRMqhm" target="_blank"><span>Engineering</span><span class="dim">0</span></a>
+<a class="item" href="https://drive.google.com/drive/folders/1l9EPsmK7_Ld3erOxvrmGg_1XhwjWpSlx" target="_blank"><span>Finance</span><span class="dim">0</span></a>
+<a class="item" href="https://drive.google.com/drive/folders/1Nma3XiCEZfqvPK7-OFWrAsZDiIHwdv9e" target="_blank"><span>House</span><span class="dim">0</span></a>
 </section>
-<section><h2>Today</h2><canvas id="net" width="800" height="360"></canvas>
-<div class="core"><strong>LIVE</strong><em>Friday 2 Oct</em>
-<div class="card"><b>2:30 PM Jarvis Tim</b><span class="dim">LP interview, tentative.</span><b style="margin-top:8px">3:00 PM Timera Lawrence</b><span class="dim">LP interview, tentative. Property not assigned.</span></div></div>
+<section><h2>Shift</h2>
+<div class="rail"><div class="hours"><span>06</span><span>10</span><span>14</span><span>18</span><span>22</span></div><div class="sweep"></div><div class="now"><b id="time">--:--</b><div class="dim">Eastern. Sweep is the shift, not a graph.</div></div></div>
+<div class="props"><span>MHR</span><span>ACH</span><span class="on">HGI</span><span>HWS</span><span>FFI</span></div>
 </section>
-<section><h2>Open work</h2>
-<a class="item" href="https://docs.google.com/document/d/1hXp8mMsNagy5y3Q3mmbMHG5z1koyhAppU6tRtMxTHFM/edit" target="_blank"><span>Morning brief</span><span>inbox</span></a>
-<a class="item" href="https://docs.google.com/document/d/1gGrivsSUP9xzpBUttu6bbIOzF3Tz9bCb0NTKaNwPo3E/edit" target="_blank"><span>LP interviews</span><span>LP</span></a>
-<a class="item" href="https://docs.google.com/spreadsheets/d/1868c3NySTU5wsfxMC51SsqCOzza3vql2CBuutbt7DXQ/edit" target="_blank"><span>Board</span><span>sheet</span></a>
+<section><h2>Due</h2>
+<div class="item"><span><i class="pulse"></i>2:30 Jarvis Tim</span><span>LP</span></div>
+<div class="item"><span><i class="pulse"></i>3:00 Timera Lawrence</span><span>LP</span></div>
+<a class="item" href="https://docs.google.com/document/d/1hXp8mMsNagy5y3Q3mmbMHG5z1koyhAppU6tRtMxTHFM/edit" target="_blank"><span>Morning brief</span><span>open</span></a>
+<a class="item" href="https://docs.google.com/document/d/1gGrivsSUP9xzpBUttu6bbIOzF3Tz9bCb0NTKaNwPo3E/edit" target="_blank"><span>Interview note</span><span>open</span></a>
 <div class="item"><span>GIA / HSIA recap</span><span class="dim">open</span></div>
-<div class="item"><span>Toast profit center 28</span><span class="dim">open</span></div>
 <div class="item"><span>M-Club cooler</span><span class="dim">open</span></div>
-<div class="item"><span>Elizabeth Linares anniversary</span><span>today</span></div>
+<div class="item"><span>Linares anniversary</span><span>today</span></div>
 </section></div>
-<script>
-function tick(){document.getElementById('clock').textContent=new Date().toLocaleString('en-US',{timeZone:'America/New_York',weekday:'short',hour:'2-digit',minute:'2-digit'})}
-tick();setInterval(tick,15000);
-const c=document.getElementById('net'),g=c.getContext('2d');const nodes=Array.from({length:60},()=>({a:Math.random()*6.28,r:30+Math.random()*180,s:.002+Math.random()*.004}));
-function draw(){g.clearRect(0,0,c.width,c.height);const cx=400,cy=150;nodes.forEach(n=>{n.a+=n.s;n.px=cx+Math.cos(n.a)*n.r;n.py=cy+Math.sin(n.a)*n.r*.55});g.strokeStyle='rgba(255,59,59,.3)';for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){const d=Math.hypot(nodes[i].px-nodes[j].px,nodes[i].py-nodes[j].py);if(d<70){g.beginPath();g.moveTo(nodes[i].px,nodes[i].py);g.lineTo(nodes[j].px,nodes[j].py);g.stroke()}}nodes.forEach(n=>{g.fillStyle='#ff3b3b';g.beginPath();g.arc(n.px,n.py,1.6,0,6.28);g.fill()});requestAnimationFrame(draw)}draw();
-</script></body></html>
+<script>function tick(){const n=new Date();document.getElementById('clock').textContent=n.toLocaleDateString('en-US',{timeZone:'America/New_York',weekday:'short',month:'short',day:'numeric'});document.getElementById('time').textContent=n.toLocaleTimeString('en-US',{timeZone:'America/New_York',hour:'2-digit',minute:'2-digit'})}tick();setInterval(tick,15000);</script>
+</body></html>
