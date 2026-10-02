@@ -1,41 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Leon OS</title>
+<html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Leon OS</title>
 <style>
-:root{--bg:#0c1014;--panel:#141a20;--line:#2a333c;--text:#e7ece8;--dim:#8b968f;--amber:#e0a15a}
+:root{--bg:#0c1014;--panel:#141a20;--line:#2a333c;--text:#e7ece8;--dim:#8b968f;--amber:#e0a15a;--green:#7dba8a}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.4 Segoe UI,system-ui,sans-serif}a{color:inherit;text-decoration:none}
-header{display:flex;justify-content:space-between;align-items:baseline;padding:18px 22px 10px}header b{letter-spacing:.22em}header span{color:var(--dim)}
-.desk{display:grid;grid-template-columns:240px 1fr 280px;gap:14px;padding:8px 18px 18px}section{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px}
-h2{margin:0 0 12px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}.item{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line)}.item:hover{color:var(--amber)}.dim{color:var(--dim)}
-.rail{position:relative;height:220px;border-radius:12px;background:linear-gradient(#10161b,#182028);overflow:hidden}.sweep{position:absolute;top:0;bottom:0;width:2px;background:var(--amber);box-shadow:0 0 18px var(--amber);animation:sweep 18s linear infinite}.hours{position:absolute;inset:16px 16px auto 16px;display:flex;justify-content:space-between;color:var(--dim);font-size:11px}.now{position:absolute;left:16px;right:16px;bottom:16px}.now b{font-size:28px}.pulse{display:inline-block;width:8px;height:8px;margin-right:6px;border-radius:50%;background:var(--amber);animation:pulse 1.6s ease-out infinite}.props{display:flex;gap:8px;margin-top:12px}.props span{flex:1;text-align:center;padding:10px 0;border:1px solid var(--line);border-radius:10px;font-size:12px;letter-spacing:.08em}.props span.on{border-color:var(--amber);color:var(--amber)}
-@keyframes sweep{from{left:8%}to{left:92%}}@keyframes pulse{50%{transform:scale(1.6);opacity:.4}}
-@media(max-width:900px){.desk{grid-template-columns:1fr}}
+header{display:flex;justify-content:space-between;padding:18px 22px 8px}header b{letter-spacing:.22em}header span{color:var(--dim)}
+.desk{display:grid;grid-template-columns:1.1fr .9fr;gap:14px;padding:8px 18px 18px}section{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px}
+h2{margin:0 0 12px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.int{border:1px solid var(--line);border-radius:12px;padding:10px 12px}.int b{display:block}.int span{color:var(--dim);font-size:12px}
+.on{border-color:#3d5a45}.on i{color:var(--green);font-style:normal}.off i{color:var(--amber);font-style:normal}
+.item{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line)}.item:hover{color:var(--amber)}.dim{color:var(--dim)}
+@media(max-width:800px){.desk,.grid{grid-template-columns:1fr}}
 </style></head><body>
-<header><b>LEON OS</b><span id="clock">Dania Beach</span></header>
-<div class="desk">
-<section><h2>Vault</h2>
-<a class="item" href="https://drive.google.com/drive/folders/1Tbr0tgxChP4tIeeIt2N4ReX-BLcRhgrA" target="_blank"><span>Open vault</span><span>→</span></a>
-<a class="item" href="https://drive.google.com/drive/folders/1DK0hUtL6NxmnpxPhkToKHt3_2V-rNoYl" target="_blank"><span>Inbox</span><span>1</span></a>
-<a class="item" href="https://drive.google.com/drive/folders/1ATphuOWN30I0g2-8y4a5v5nngdMwjlJp" target="_blank"><span>Loss prevention</span><span>1</span></a>
-<a class="item" href="https://drive.google.com/drive/folders/1jOKA8fJvgd8EI_KXwPaf9_7G2iBRMqhm" target="_blank"><span>Engineering</span><span class="dim">0</span></a>
-<a class="item" href="https://drive.google.com/drive/folders/1l9EPsmK7_Ld3erOxvrmGg_1XhwjWpSlx" target="_blank"><span>Finance</span><span class="dim">0</span></a>
-<a class="item" href="https://drive.google.com/drive/folders/1Nma3XiCEZfqvPK7-OFWrAsZDiIHwdv9e" target="_blank"><span>House</span><span class="dim">0</span></a>
-</section>
-<section><h2>Shift</h2>
-<div class="rail"><div class="hours"><span>06</span><span>10</span><span>14</span><span>18</span><span>22</span></div><div class="sweep"></div><div class="now"><b id="time">--:--</b><div class="dim">Eastern. Sweep is the shift, not a graph.</div></div></div>
-<div class="props"><span>MHR</span><span>ACH</span><span class="on">HGI</span><span>HWS</span><span>FFI</span></div>
-</section>
-<section><h2>Due</h2>
-<div class="item"><span><i class="pulse"></i>2:30 Jarvis Tim</span><span>LP</span></div>
-<div class="item"><span><i class="pulse"></i>3:00 Timera Lawrence</span><span>LP</span></div>
-<a class="item" href="https://docs.google.com/document/d/1hXp8mMsNagy5y3Q3mmbMHG5z1koyhAppU6tRtMxTHFM/edit" target="_blank"><span>Morning brief</span><span>open</span></a>
-<a class="item" href="https://docs.google.com/document/d/1gGrivsSUP9xzpBUttu6bbIOzF3Tz9bCb0NTKaNwPo3E/edit" target="_blank"><span>Interview note</span><span>open</span></a>
-<div class="item"><span>GIA / HSIA recap</span><span class="dim">open</span></div>
-<div class="item"><span>M-Club cooler</span><span class="dim">open</span></div>
-<div class="item"><span>Linares anniversary</span><span>today</span></div>
+<header><b>LEON OS</b><span id="clock">integrations</span></header>
+<div class="desk"><section><h2>Connected</h2><div class="grid">
+<div class="int on"><b>Outlook</b><span><i>used</i> · work mail, briefs</span></div>
+<div class="int on"><b>Outlook Calendar</b><span><i>used</i> · interviews, anniversary</span></div>
+<div class="int on"><b>Google Drive</b><span><i>used</i> · vault and board</span></div>
+<div class="int on"><b>GitHub</b><span><i>used</i> · this page</span></div>
+<div class="int off"><b>Gmail</b><span><i>connected</i> · personal, not on desk</span></div>
+<div class="int off"><b>Google Calendar</b><span><i>connected</i> · not read yet</span></div>
+<div class="int off"><b>Teams</b><span><i>connected</i> · mentions not pulled</span></div>
+<div class="int off"><b>Notion</b><span><i>connected</i> · no pages written</span></div>
+<div class="int off"><b>Finance</b><span><i>connected</i> · house and cards unused</span></div>
+<div class="int off"><b>Composio</b><span><i>connected</i> · no action run</span></div>
+<div class="int off"><b>Voice</b><span><i>connected</i> · no speech</span></div>
+<div class="int off"><b>Automations</b><span><i>connected</i> · no schedule from this desk</span></div>
+</div></section>
+<section><h2>Already on the desk</h2>
+<a class="item" href="https://drive.google.com/drive/folders/1Tbr0tgxChP4tIeeIt2N4ReX-BLcRhgrA" target="_blank"><span>Drive vault</span><span>→</span></a>
+<a class="item" href="https://docs.google.com/document/d/1hXp8mMsNagy5y3Q3mmbMHG5z1koyhAppU6tRtMxTHFM/edit" target="_blank"><span>Morning brief</span><span>Outlook</span></a>
+<a class="item" href="https://docs.google.com/document/d/1gGrivsSUP9xzpBUttu6bbIOzF3Tz9bCb0NTKaNwPo3E/edit" target="_blank"><span>LP interviews</span><span>Calendar</span></a>
+<a class="item" href="https://github.com/leoncarlos18-design/leoncarlos18-design.github.io" target="_blank"><span>Page repo</span><span>GitHub</span></a>
+<p class="dim">Green means a skill has already read or written it. Amber means the login exists and the desk ignores it. A tile is not a live feed.</p>
 </section></div>
-<script>function tick(){const n=new Date();document.getElementById('clock').textContent=n.toLocaleDateString('en-US',{timeZone:'America/New_York',weekday:'short',month:'short',day:'numeric'});document.getElementById('time').textContent=n.toLocaleTimeString('en-US',{timeZone:'America/New_York',hour:'2-digit',minute:'2-digit'})}tick();setInterval(tick,15000);</script>
+<script>function tick(){document.getElementById('clock').textContent=new Date().toLocaleString('en-US',{timeZone:'America/New_York',weekday:'short',hour:'2-digit',minute:'2-digit'})}tick();setInterval(tick,15000);</script>
 </body></html>
